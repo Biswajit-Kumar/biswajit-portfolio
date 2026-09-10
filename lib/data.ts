@@ -62,10 +62,11 @@ export const skillGroups = [
 
 export type Project = {
   title: string;
-  period: string;
+  subtitle?: string;
+  period?: string;
   description: string;
   tags: string[];
-  github?: string;
+  github?: string; // TODO: add repo URL once LADFNet / Urban Sprawl repos are public
   live?: string;
 };
 
@@ -79,10 +80,21 @@ export const projects: Project[] = [
     github: "https://github.com/Biswajit-Kumar/PaperMind",
     live: "https://paper-mind-one.vercel.app",
   },
-  // TODO: add LADFNet and Urban Sprawl here once repo details are available — same shape as above.
+  {
+    title: "LADFNet",
+    subtitle: "Vision-Language Medical Image Segmentation",
+    description:
+      "A vision-language segmentation framework for CT lesion segmentation, extending LViT with BERT text-embedding fusion and a dual-decoder (Detail & Structure) architecture. Designed Window-based Local Self-Attention (WLSA) and an Adaptive Boundary-Aware Focal Tversky (ABAFT) loss to strengthen local feature extraction and balance the training objective dynamically. Reached a 74.92% Dice score on MosMedData+, outperforming the baseline LViT while lowering computational complexity and improving boundary preservation.",
+    tags: ["PyTorch", "ViT", "BERT", "CUDA", "OpenCV", "Medical Imaging"],
+  },
+  {
+    title: "Urban Sprawl Modeling",
+    subtitle: "Geospatial ML for Environmental Criticality",
+    description:
+      "A five-phase geospatial machine learning pipeline built in Google Earth Engine to track 15 years of urban sprawl (2010–2025) and simulate growth trajectories toward 2040. Feature-engineered a 9-dimensional multispectral tensor (NDVI, NDWI, NDBI) across Landsat 5–9 imagery to eliminate spectral confusion between riverbed sand and built-up concrete. A Random Forest classifier trained on 1,000+ ground-truth samples reached 96.10% accuracy (0.94 Kappa), quantifying a 194% expansion in built-up footprint and a 3.01°C urban-heat-island surge.",
+    tags: ["Python", "Google Earth Engine", "Random Forest", "GIS", "Landsat", "Remote Sensing"],
+  },
 ];
-
-export const placeholderProjectSlots = 2; // how many "add a project" cards to render
 
 export const education = [
   {
