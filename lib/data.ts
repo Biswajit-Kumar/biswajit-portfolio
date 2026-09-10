@@ -65,8 +65,8 @@ export type Project = {
   period: string;
   description: string;
   tags: string[];
-  link?: string;
-  isPlaceholder?: boolean;
+  github?: string;
+  live?: string;
 };
 
 export const projects: Project[] = [
@@ -76,9 +76,10 @@ export const projects: Project[] = [
     description:
       "Built a full-stack RAG document-chat platform enabling real-time document uploads and interactive contextual Q&A. Integrated Google Gemini APIs for text embeddings and chat generation, engineered a local microservice architecture around Docker, MongoDB, and Qdrant, and drove the end-to-end product branding and system design.",
     tags: ["React", "Express", "MongoDB", "Qdrant", "LangChain", "Gemini API", "Docker"],
-    link: "https://github.com/Biswajit-Kumar/PaperMind",
+    github: "https://github.com/Biswajit-Kumar/PaperMind",
+    live: "https://paper-mind-one.vercel.app",
   },
-  // TODO: add more real projects here — same shape as above.
+  // TODO: add LADFNet and Urban Sprawl here once repo details are available — same shape as above.
 ];
 
 export const placeholderProjectSlots = 2; // how many "add a project" cards to render

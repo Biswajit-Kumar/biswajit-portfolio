@@ -1,5 +1,6 @@
 import { ArrowUpRight, Plus } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import { GithubIcon } from "@/components/icons";
 import { placeholderProjectSlots, projects } from "@/lib/data";
 
 export default function Projects() {
@@ -17,20 +18,33 @@ export default function Projects() {
           <Reveal key={project.title} delay={i * 0.05}>
             <div className="flex h-full flex-col rounded-2xl border border-border bg-surface p-7 transition-colors hover:border-accent/50">
               <div className="flex items-start justify-between gap-4">
-                <h3 className="text-lg font-semibold">{project.title}</h3>
-                {project.link && (
+                <div className="flex items-center gap-3">
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`${project.title} source on GitHub`}
+                      className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-accent hover:text-accent"
+                    >
+                      <GithubIcon size={15} />
+                    </a>
+                  )}
+                  <h3 className="text-lg font-semibold">{project.title}</h3>
+                </div>
+                {project.live && (
                   <a
-                    href={project.link}
+                    href={project.live}
                     target="_blank"
                     rel="noreferrer"
-                    aria-label={`View ${project.title} on GitHub`}
+                    aria-label={`${project.title} live site`}
                     className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-accent hover:text-accent"
                   >
                     <ArrowUpRight size={16} />
                   </a>
                 )}
               </div>
-              <p className="label-mono mt-1">{project.period}</p>
+              <p className="label-mono mt-2">{project.period}</p>
               <p className="mt-4 text-sm leading-relaxed text-muted">
                 {project.description}
               </p>
@@ -38,7 +52,7 @@ export default function Projects() {
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-border bg-surface-2 px-3 py-1 text-xs text-foreground/80"
+                    className="rounded-full border border-border bg-surface-2 px-3 py-1 text-xs text-foreground/80 transition-colors hover:border-accent/60 hover:text-accent"
                   >
                     {tag}
                   </span>
