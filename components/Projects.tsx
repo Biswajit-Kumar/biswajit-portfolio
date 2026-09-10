@@ -16,10 +16,12 @@ export default function Projects() {
       <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
         {projects.map((project, i) => (
           <Reveal key={project.title} delay={i * 0.05}>
-            <div className="flex h-full flex-col rounded-2xl border border-border bg-surface p-7 transition-colors hover:border-accent/50">
+            <div className="group flex h-full flex-col rounded-2xl border border-border bg-surface p-7 transition-colors hover:border-accent/50">
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h3 className="text-lg font-semibold">{project.title}</h3>
+                  <h3 className="text-lg font-semibold transition-colors group-hover:text-accent">
+                    {project.title}
+                  </h3>
                   {project.subtitle && (
                     <p className="mt-1 text-sm text-muted">{project.subtitle}</p>
                   )}

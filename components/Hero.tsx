@@ -16,7 +16,10 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="label-mono mb-6 flex items-center gap-2"
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-accent-2" />
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-2 opacity-75" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-2" />
+          </span>
           {profile.status}
         </motion.p>
 

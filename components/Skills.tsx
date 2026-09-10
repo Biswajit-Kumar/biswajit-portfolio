@@ -14,7 +14,7 @@ export default function Skills() {
       <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {skillGroups.map((group, i) => (
           <Reveal key={group.title} delay={i * 0.05}>
-            <div className="h-full rounded-2xl border border-border bg-surface p-6">
+            <div className="h-full rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-accent/50">
               <p className="mb-4 text-sm font-medium text-accent">
                 {group.title}
               </p>
@@ -22,7 +22,7 @@ export default function Skills() {
                 {group.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="rounded-full border border-border bg-surface-2 px-3 py-1 text-xs text-foreground/80"
+                    className="rounded-full border border-border bg-surface-2 px-3 py-1 text-xs text-foreground/80 transition-colors hover:border-accent/60 hover:text-accent"
                   >
                     {skill}
                   </span>

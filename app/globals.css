@@ -60,3 +60,16 @@ body {
   font-size: 0.7rem;
   color: var(--muted);
 }
+
+@keyframes wave {
+  0%, 60%, 100% { transform: rotate(0deg); }
+  10%, 30% { transform: rotate(15deg); }
+  20% { transform: rotate(-9deg); }
+  40% { transform: rotate(-5deg); }
+  50% { transform: rotate(11deg); }
+}
+
+.group:hover .wave-on-hover {
+  animation: wave 1.4s ease-in-out infinite;
+  transform-origin: 70% 80%;
+}

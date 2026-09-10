@@ -43,9 +43,12 @@ export default function Navbar() {
           </a>
           <a
             href={`mailto:${profile.email}`}
-            className="rounded-full border border-border px-4 py-1.5 text-sm transition-colors hover:border-accent hover:text-accent"
+            className="group rounded-full border border-border px-4 py-1.5 text-sm transition-colors hover:border-accent hover:text-accent"
           >
-            Say hi <span aria-hidden="true">👋</span>
+            Say hi{" "}
+            <span aria-hidden="true" className="wave-on-hover inline-block">
+              👋
+            </span>
           </a>
         </div>
       </nav>
